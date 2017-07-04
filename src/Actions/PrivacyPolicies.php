@@ -8,6 +8,7 @@ class PrivacyPolicies
     {
         $name = $params['name'];
         $filename = dirname(__DIR__) . "/views/barware/{$name}.html";
+        var_dump($filename);die;
         return file_get_contents($filename);
     }
 }
