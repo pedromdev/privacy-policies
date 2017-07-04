@@ -8,7 +8,7 @@ class PrivacyPolicies
 {    
     function __invoke($name)
     {
-        $filename = dirname(__DIR__) . "/views/barware/{$name}.html";
+        $filename = dirname(dirname(__DIR__)) . "/views/barware/{$name}.html";
 
         if (!is_file($filename)) {
             return new Response("Privacy policy not found", 404);
