@@ -25,12 +25,13 @@ foreach($routes as $route) {
         $routeHandler = $route['handler'];
         $funcArgs = array_slice(func_get_args(), 2);
         preg_match_all('/\{([a-z0-9._-]+)\}/', $route['url'], $routeParams);
+        $j = 0;
 
         if (!empty($routeParams)) {
             $count = count($routeParams);
 
-            for ($i = 0; $i < $count; $i++) {
-                $params[$routeParams[$i][1]] = $funcArgs[$i];
+            for ($i = 1; $i < $count; $i += 2) {
+                $params[$routeParams[$i][0]] = $funcArgs[$j++];
             }
         }
         var_dump($routeParams);
