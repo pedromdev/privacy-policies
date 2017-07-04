@@ -14,6 +14,6 @@ class PrivacyPolicies
             return new Response("Privacy policy not found", 404);
         }
         $html = file_get_contents($filename);
-        var_dump($html);die;
+        return new Response($html, 200);
     }
 }
