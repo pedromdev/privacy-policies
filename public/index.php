@@ -33,7 +33,7 @@ foreach($routes as $route) {
                 $params[$routeParams[$i][1]] = $funcArgs[$i];
             }
         }
-        return $routeHandler($app, $request, $params);
+        return call_user_func($routeHandler, $app, $request, $params);
     });
 }
 
