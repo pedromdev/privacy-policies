@@ -19,7 +19,8 @@ foreach($providers as $provider) {
 
 foreach($routes as $route) {
     $routeMethod = $route['method'];
-    $app->$routeMethod($route['url'], function(Application $app, Request $request) use($app) {
+
+    $app->$routeMethod($route['url'], function(Application $app, Request $request) {
         $params = [];
         $routeHandler = $route['handler'];
         $funcArgs = array_slice(func_get_args(), 2);
