@@ -10,7 +10,7 @@ class PrivacyPolicies
     {
         $filename = dirname(__DIR__) . "/views/barware/{$name}.html";
 
-        if (!is_file($filename) {
+        if (!is_file($filename)) {
             return new Response("Privacy policy not found", 404);
         }
         $html = file_get_contents($filename);
