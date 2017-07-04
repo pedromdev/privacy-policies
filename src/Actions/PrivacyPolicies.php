@@ -4,9 +4,8 @@ namespace Barware\Actions;
 
 class PrivacyPolicies
 {    
-    function __invoke($app, $request, $params)
+    function __invoke($name)
     {
-        $name = $params['name'];
         $filename = dirname(__DIR__) . "/views/barware/{$name}.html";
         var_dump($filename);die;
         return file_get_contents($filename);
